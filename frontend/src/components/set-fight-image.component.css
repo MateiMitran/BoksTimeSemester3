@@ -1,0 +1,61 @@
+.listing-form .select-images-wrapper .select-image-box {
+    position: relative;
+    width: 180px;
+    margin-right: 15px;
+}
+
+.listing-form .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.listing-form .inputfile + label {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 7.5px 15px;
+}
+
+.listing-form .inputfile:focus + label,
+.listing-form .inputfile.has-focus + label {
+    outline: none;
+}
+
+.listing-form .inputfile + label svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    fill: #fff;
+    margin-top: -4px;
+    margin-right: 4px;
+}
+
+.listing-form .inputfile + label {
+    color: #f1e5e6;
+    background-color: #d3394c;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.listing-form .inputfile:focus + label,
+.listing-form .inputfile.has-focus + label,
+.listing-form .inputfile + label:hover {
+    background-color: #722040;
+}

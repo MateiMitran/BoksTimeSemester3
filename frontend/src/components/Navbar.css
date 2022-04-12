@@ -1,0 +1,20 @@
+.navbar-expand.navbar-dark.bg-dark .navbar-brand {
+    font-weight:bold;
+    color: #c74f33;
+    padding-left: .3125rem;
+}
+
+.nav-link {
+    padding-left:0.5000rem;
+    padding-right:1rem;
+    transition: color 1.5s
+    ease-in-out,background-color .15s
+     ease-in-out,border-color
+      .15s ease-in-out;
+}
+#logout-button {
+    color: #c74f33;
+    font-weight:bold;
+    right: 500px;
+    justify-content:left;
+}

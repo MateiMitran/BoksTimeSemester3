@@ -1,0 +1,6 @@
+#fighter-list {
+    list-style-type: none;
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+}

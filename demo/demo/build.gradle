@@ -1,0 +1,59 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "org.sonarqube" version "3.3"
+	id 'java'
+	id "com.microsoft.azure.azurewebapp" version "1.1.0"
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.5.5'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.2'
+	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+	implementation 'com.auth0:java-jwt:3.18.2'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	implementation group: 'commons-codec', name: 'commons-codec', version: '1.15'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-websocket', version: '2.6.1'
+	implementation group: 'com.lordofthejars', name: 'nosqlunit-mongodb', version: '1.0.0'
+	implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.10'
+	testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.2.0'
+	testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.8.2'
+	testImplementation group: 'org.springframework.security', name: 'spring-security-test', version: '5.6.1'
+
+}
+sonarqube {
+	properties {
+		property "sonar.projectKey", "demo"
+		property "sonar.qualitygate.wait", true
+
+	}
+}
+test {
+	useJUnitPlatform()
+}
+
+azurewebapp {
+	subscription = 'aa52dc19-93e0-4eb8-a2d5-2861b6a59a3d'
+	resourceGroup = 'DefaultResourceGroup-WEU'
+	appName = 'BoksTime'
+	pricingTier = 'P1v2'
+	region = 'North Europe'
+	runtime {
+		os = 'Windows'
+		webContainer = 'Tomcat 9.0'
+		javaVersion = 'Java 11'
+	}
+}
